@@ -1,6 +1,6 @@
 using System;
 
-namespace Forum
+namespace Blog
 {
     public class BlogComment
     {

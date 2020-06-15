@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Forum
+namespace Blog
 {
     public class BlogPost
     {
