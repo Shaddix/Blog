@@ -23,6 +23,6 @@ namespace Blog
             return _connection;
         }
 
-        public void Dispose() => _connection.Dispose();
+        public override void Dispose() => _connection.Dispose();
     }
 }
