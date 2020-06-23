@@ -1,6 +1,7 @@
 using System.Data.Common;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Blog
 {
@@ -10,8 +11,9 @@ namespace Blog
         public DbSet<BlogPost> BlogPosts { get; set; }
         public DbSet<BlogComment> BlogComments { get; set; }
 
-        public MyDbContext() : base(new DbContextOptionsBuilder<MyDbContext>()
+        public MyDbContext(ILoggerFactory loggerFactory) : base(new DbContextOptionsBuilder<MyDbContext>()
             .UseSqlite(CreateInMemoryDatabase())
+            .UseLoggerFactory(loggerFactory)
             .Options)
         {
         }

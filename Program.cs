@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 
 namespace Blog
 {
@@ -9,8 +10,10 @@ namespace Blog
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-
-            var context = new MyDbContext();
+            
+            var loggerFactory = LoggerFactory.Create(builder => { builder.AddConsole(); });
+            
+            var context = new MyDbContext(loggerFactory);
             context.Database.EnsureCreated();
             InitializeData(context);
 
