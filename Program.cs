@@ -10,9 +10,9 @@ namespace Blog
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-            
+
             var loggerFactory = LoggerFactory.Create(builder => { builder.AddConsole(); });
-            
+
             var context = new MyDbContext(loggerFactory);
             context.Database.EnsureCreated();
             InitializeData(context);
@@ -42,9 +42,9 @@ namespace Blog
             {
                 Comments = new List<BlogComment>()
                 {
-                    new BlogComment("5", new DateTime(2020, 3, 7)),
-                    new BlogComment("6", new DateTime(2020, 3, 9)),
-                    new BlogComment("7", new DateTime(2020, 3, 8)),
+                    new BlogComment("5", new DateTime(2020, 2, 7)),
+                    new BlogComment("6", new DateTime(2020, 2, 9)),
+                    new BlogComment("7", new DateTime(2020, 2, 8)),
                 }
             });
             context.SaveChanges();
