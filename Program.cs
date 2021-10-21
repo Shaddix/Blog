@@ -27,12 +27,12 @@ namespace Blog
             // Petr: 2
             // Elena: 3
 
-            Console.WriteLine("Posts ordered by date of last comment:");
+            Console.WriteLine("Posts ordered by date of last comment. Result should include text of last comment:");
             //ToDo: write a query and dump the data to console
             // Expected result (format could be different, e.g. object serialized to JSON is ok):
-            // Post2: '2020-03-06'
-            // Post1: '2020-03-05'
-            // Post3: '2020-02-14'
+            // Post2: '2020-03-06', '4'
+            // Post1: '2020-03-05', '8'
+            // Post3: '2020-02-14', '9'
 
 
             Console.WriteLine("How many last comments each user left:");
