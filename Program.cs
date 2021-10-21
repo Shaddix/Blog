@@ -18,8 +18,11 @@ namespace Blog
             context.Database.EnsureCreated();
             InitializeData(context);
 
+            Console.WriteLine("All posts:");
             var data = context.BlogPosts.Select(x => x.Title).ToList();
-
+            Console.WriteLine(JsonSerializer.Serialize(data));
+            
+            
             Console.WriteLine("How many comments each user left:");
             //ToDo: write a query and dump the data to console
             // Expected result (format could be different, e.g. object serialized to JSON is ok):
@@ -50,8 +53,6 @@ namespace Blog
             // Console.WriteLine(
             //     JsonSerializer.Serialize(BlogService.NumberOfLastCommentsLeftByUser(context)));
 
-
-            Console.WriteLine(JsonSerializer.Serialize(data));
         }
 
         private static void InitializeData(MyDbContext context)
