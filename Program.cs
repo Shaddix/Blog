@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.Json;
 using Microsoft.Extensions.Logging;
 
 namespace Blog
@@ -18,6 +19,8 @@ namespace Blog
             InitializeData(context);
 
             var data = context.BlogPosts.Select(x => x.Title).ToList();
+            
+            Console.WriteLine(JsonSerializer.Serialize(data));
         }
 
         private static void InitializeData(MyDbContext context)
